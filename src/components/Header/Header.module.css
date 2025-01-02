@@ -1,0 +1,99 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    background-color: #fff; 
+  }
+  
+  .logo {
+    display: flex; 
+    align-items: center;
+    height: 50px;
+  }
+
+  
+  .nav {
+    display: flex;
+    gap: 55px;
+  }
+  
+  .nav a {
+    text-decoration: none; 
+    color: black; 
+    font-weight: 500; 
+  }
+  
+  .btn {
+    padding: 8px 16px; 
+    background-color: #007BFF; 
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 4px; /* Закругляем углы */
+    cursor: pointer; /* Изменяем курсор на указатель */
+  }
+  
+  .btn:hover {
+    background-color: #0056b3; 
+  }
+
+
+  .nav_links {
+    cursor: pointer;
+    text-decoration: none;
+    color: #333333; /* Темно-серый текст */
+    font-size: 16px;
+    font-weight: 500; /* Средняя толщина текста */
+    transition: color 0.3s ease, border-bottom 0.3s ease; /* Плавные переходы */
+    position: relative;
+  }
+  
+  .nav_links:hover {
+    color: #007bff; /* Синий текст при наведении */
+  }
+  
+  .nav_links::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff; /* Синяя линия под ссылкой */
+    bottom: -3px;
+    left: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .nav_links:hover::after {
+    width: 100%; /* Линия появляется при наведении */
+  }
+
+
+  .btn {
+    padding: 8px 18px;
+    background-color: #f8f9fa; 
+    color: #333; 
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+    font-size: 14px; 
+    font-weight: 500; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+  }
+  
+  .btn:hover {
+    background-color: #007bff; 
+    color: white; 
+    border-color: #007bff; 
+  }
+  
+  .btn:focus {
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); 
+  }
+  
