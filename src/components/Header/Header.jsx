@@ -1,14 +1,17 @@
 import React from "react";
 import style from "./Header.module.css";
-// import UnicamLogo from "../../shared/unicamLogo/UnicamLogo";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../shared/Logo/Logo";
 
 const Header = () => {
   const navigate = useNavigate();
 
   return (
     <header className={style.header}>
-      <div className={style.logo}>{/* <UnicamLogo /> */}</div>
+      <div className={style.logo}>
+        {" "}
+        <Logo />
+      </div>
       <nav className={style.nav}>
         <a className={style.nav_links} onClick={() => navigate("/")}>
           Главная страница

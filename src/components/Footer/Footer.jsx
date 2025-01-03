@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Footer.module.css";
-// import UnicamLogo from "../../shared/unicamLogo/UnicamLogo";
+import Logo from "../../shared/Logo/Logo";
 
 const Footer = () => {
   const socialLinks = [
@@ -20,7 +20,7 @@ const Footer = () => {
       <div className={style.container}>
         <div className={style.footerCenter}>
           <div className={style.footerText}>
-            {/* <UnicamLogo /> */}
+            <Logo />
             <p className={style.footerIconText}>
               Найди работу у нас
               <br />
