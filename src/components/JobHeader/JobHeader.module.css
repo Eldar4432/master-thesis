@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .textBlock {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .searchInput {
+    width: 100%;
+  }
+  
+  .imageBlock {
+    flex-shrink: 0;
+  }
+  
+  .image {
+    width: 250px;
+
+  }
+  

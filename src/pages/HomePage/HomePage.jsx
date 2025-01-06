@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import Filters from "../../components/Filters/Filters";
 import JobList from "../../components/JobList/JobList";
 import styles from "./HomePage.module.css";
+import JobHeader from "../../components/JobHeader/JobHeader";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,10 @@ const HomePage = () => {
       <Header />
       <div className={styles.container}>
         <Filters />
-        <JobList />
+        <div className={styles.content}>
+          <JobHeader />
+          <JobList />
+        </div>
       </div>
       <Footer />
     </div>
