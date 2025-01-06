@@ -1,37 +1,56 @@
 import React from "react";
+import { Select, Button, Form } from "antd";
 import styles from "./Filters.module.css";
 
+const { Option } = Select;
+
 const Filters = () => {
+  const handleFilterSubmit = (values) => {
+    console.log("Filters applied:", values);
+  };
+
   return (
     <aside className={styles.filters}>
-      <h2>Filter Jobs</h2>
-      <form>
-        <div className={styles.filterGroup}>
-          <label htmlFor="region">Region</label>
-          <select id="region" name="region">
-            <option value="all">All</option>
-            <option value="north">North</option>
-            <option value="south">South</option>
-          </select>
-        </div>
-        <div className={styles.filterGroup}>
-          <label htmlFor="district">District</label>
-          <select id="district" name="district">
-            <option value="all">All</option>
-            <option value="center">Center</option>
-            <option value="suburb">Suburb</option>
-          </select>
-        </div>
-        <div className={styles.filterGroup}>
-          <label htmlFor="jobType">Job Type</label>
-          <select id="jobType" name="jobType">
-            <option value="all">All</option>
-            <option value="fulltime">Full-time</option>
-            <option value="parttime">Part-time</option>
-          </select>
-        </div>
-        <button type="submit">Apply Filters</button>
-      </form>
+      <h2>Фильтрация работы</h2>
+      <Form onFinish={handleFilterSubmit} layout="vertical">
+        <Form.Item name="region" label="Регионы">
+          <Select placeholder="Выберите регион">
+            <Option value="all">Все Регионы</Option>
+            <Option value="center">Талас</Option>
+            <Option value="suburb">Чуй</Option>
+            <Option value="suburb">Нарын</Option>
+            <Option value="suburb">Иссык-Куль</Option>
+            <Option value="suburb">Жалал-Абад</Option>
+            <Option value="suburb">Ош</Option>
+            <Option value="suburb">Баткен</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item name="district" label="Районы">
+          <Select placeholder="Выберите район">
+            <Option value="all">Все районы</Option>
+            <Option value="center">Бакай-Ата</Option>
+            <Option value="suburb">Ленинский</Option>
+            <Option value="suburb">Тон</Option>
+            <Option value="suburb">Озгон</Option>
+            <Option value="suburb">Алай</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item name="jobType" label="Тип работы">
+          <Select placeholder="Выберите тип работы">
+            <Option value="all">All</Option>
+            <Option value="fulltime">Full-time</Option>
+            <Option value="parttime">Part-time</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit" block>
+            Apply Filters
+          </Button>
+        </Form.Item>
+      </Form>
     </aside>
   );
 };
