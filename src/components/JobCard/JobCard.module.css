@@ -1,0 +1,46 @@
+.jobCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    text-align: left; /* Текст по левому краю */
+  }
+  
+  .jobCard:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    color: #555;
+    margin-right: 8px; /* Отступ между иконкой и текстом */
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .text {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  
+  .date {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #999;
+    font-style: italic; /* Дата выглядит чуть нежнее */
+  }
+  

@@ -1,22 +1,38 @@
 import React from "react";
 import styles from "./JobList.module.css";
+import JobCard from "../JobCard/JobCard";
 
 const JobList = () => {
+  const jobs = [
+    {
+      title: "Software Developer",
+      company: "TechCorp",
+      location: "North Region",
+      salary: "$3000/month",
+      datePosted: "2025-01-02",
+    },
+    {
+      title: "Graphic Designer",
+      company: "DesignStudio",
+      location: "South Region",
+      salary: "$2500/month",
+      datePosted: "2025-01-02",
+    },
+  ];
+
   return (
     <main className={styles.jobs}>
       <h2>Job Listings</h2>
-      <div className={styles.jobCard}>
-        <h3>Software Developer</h3>
-        <p>Company: TechCorp</p>
-        <p>Location: North Region</p>
-        <p>Salary: $3000/month</p>
-      </div>
-      <div className={styles.jobCard}>
-        <h3>Graphic Designer</h3>
-        <p>Company: DesignStudio</p>
-        <p>Location: South Region</p>
-        <p>Salary: $2500/month</p>
-      </div>
+      {jobs.map((job, index) => (
+        <JobCard
+          key={index}
+          title={job.title}
+          company={job.company}
+          location={job.location}
+          salary={job.salary}
+          datePosted={job.datePosted}
+        />
+      ))}
     </main>
   );
 };
