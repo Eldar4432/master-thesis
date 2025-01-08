@@ -16,57 +16,60 @@ const Footer = () => {
   ];
 
   return (
-    <div className={style.footerContainer}>
-      <div className={style.container}>
-        <div className={style.footerCenter}>
-          <div className={style.footerText}>
-            <Logo />
-            <p className={style.footerIconText}>
-              Найди работу у нас
-              <br />
-            </p>
-          </div>
-
-          <div className={style.footerOffice}>
-            <h1 className={style.footerTitle}>Офис</h1>
-            <p className={style.footerDetails}>Почта</p>
-            <p className={style.footerDetails}>Адрес</p>
-          </div>
-
-          <div className={style.footerSocial}>
-            <h1 className={style.footerTitle}>Соц. сети</h1>
-            <div className={style.footerSocialLinks}>
-              {socialLinks.map(({ name, href }) => (
-                <a
-                  key={name}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={style.footerSocialBtn}
-                >
-                  {name}
-                </a>
-              ))}
-            </div>
-          </div>
+    <footer className={style.footer}>
+      <div className={style.footerTop}>
+        <div className={style.logoSection}>
+          <Logo />
+          <p className={style.slogan}>Найди свою работу с нами!</p>
         </div>
-        <div className={style.footerBottom}>
-          <p className={style.footerCopyright}>
-            2025 - All rights reserved - Eldar Aibekov
-          </p>
-          <div className={style.footerCreator}>
-            <a
-              href="https://github.com/Eldar4432"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={style.footerCreatorLink}
-            >
-              Eldar Aibekov
-            </a>
+        <div className={style.linksSection}>
+          <h4>Полезные ссылки</h4>
+          <ul className={style.linksList}>
+            <li>
+              <a href="/about">О нас</a>
+            </li>
+            <li>
+              <a href="/contact">Контакты</a>
+            </li>
+            <li>
+              <a href="/terms">Условия использования</a>
+            </li>
+            <li>
+              <a href="/privacy">Политика конфиденциальности</a>
+            </li>
+          </ul>
+        </div>
+        <div className={style.socialLinks}>
+          <h4>Наши соц.сети</h4>
+          <div>
+            {socialLinks.map(({ name, href }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={style.socialLink}
+              >
+                {name}
+              </a>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+      <div className={style.footerBottom}>
+        <p className={style.copyright}>
+          © 2025 Eldar Aibekov. Все права защищены.
+        </p>
+        <a
+          href="https://github.com/Eldar4432"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={style.creatorLink}
+        >
+          GitHub: Eldar4432
+        </a>
+      </div>
+    </footer>
   );
 };
 
