@@ -45,6 +45,20 @@ const Filters = () => {
           </Select>
         </Form.Item>
 
+        <Form.Item name="JobCategory" label="Тип вакансии">
+          <Select placeholder="Выберите тип вакансии">
+            <Option value="all">Все</Option>
+            <Option value="it">IT</Option>
+            <Option value="teacher">Учитель</Option>
+            <Option value="electrician">Электрик</Option>
+            <Option value="waiter">Официант</Option>
+            <Option value="driver">Водитель</Option>
+            <Option value="doctor">Врач</Option>
+            <Option value="nurse">Медсестра</Option>
+            <Option value="engineer">Инженер</Option>
+          </Select>
+        </Form.Item>
+
         <Form.Item>
           <Button type="primary" htmlType="submit" block>
             Apply Filters
