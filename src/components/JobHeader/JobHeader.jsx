@@ -12,7 +12,7 @@ const JobHeader = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.textBlock}>
+      <div>
         <h1 className={styles.title}>Открытые вакансии и сотрудники</h1>
         <Search
           placeholder="Введите ключевые слова для поиска"
