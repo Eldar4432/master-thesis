@@ -1,0 +1,33 @@
+.loginContainer {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(248, 248, 248, 0.1);
+  }
+  
+  .title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  .loginForm {
+    width: 100%;
+  }
+  
+  .registerLink {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .registerLink a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .registerLink a:hover {
+    text-decoration: underline;
+  }
+  
