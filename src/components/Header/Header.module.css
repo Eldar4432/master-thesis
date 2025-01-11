@@ -17,6 +17,12 @@
     height: 50px;
   }
 
+  .slogan {
+    margin: 0;
+    color: #000000;
+    font-size: 14px;
+    margin-left: 10px;
+  }
   
   .nav {
     display: flex;

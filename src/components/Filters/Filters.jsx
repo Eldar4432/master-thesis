@@ -61,7 +61,7 @@ const Filters = () => {
 
         <Form.Item>
           <Button type="primary" htmlType="submit" block>
-            Apply Filters
+            Искать
           </Button>
         </Form.Item>
       </Form>

@@ -11,6 +11,7 @@ const Header = () => {
     <header className={style.header}>
       <div className={style.logo}>
         <Logo />
+        <p className={style.slogan}>Найди свою работу с нами!</p>
       </div>
       <nav className={style.nav}>
         <a className={style.nav_links} onClick={() => navigate("/")}>
