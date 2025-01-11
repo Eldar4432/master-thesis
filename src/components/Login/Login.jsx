@@ -46,7 +46,7 @@ const Login = () => {
         </Form.Item>
       </Form>
       <p className={styles.registerLink}>
-        Нет аккаунта? <a href="/registration">Зарегистрироваться</a>
+        Нет аккаунта? <a href="/register">Зарегистрироваться</a>
       </p>
     </div>
   );
