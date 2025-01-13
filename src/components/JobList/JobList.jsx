@@ -5,17 +5,38 @@ import JobCard from "../JobCard/JobCard";
 const JobList = () => {
   const jobs = [
     {
-      title: "Software Developer",
+      title: "Разработчик программного обеспечения",
       company: "TechCorp",
-      location: "North Region",
-      salary: "$3000/month",
+      location: "Северный регион",
+      salary: "3000$/месяц",
       datePosted: "2025-01-02",
     },
     {
-      title: "Graphic Designer",
+      title: "Разработчик программного обеспечения",
+      company: "TechCorp",
+      location: "Северный регион",
+      salary: "3000$/месяц",
+      datePosted: "2025-01-02",
+    },
+    {
+      title: "Разработчик программного обеспечения",
+      company: "TechCorp",
+      location: "Северный регион",
+      salary: "3000$/месяц",
+      datePosted: "2025-01-02",
+    },
+    {
+      title: "Графический дизайнер",
       company: "DesignStudio",
-      location: "South Region",
-      salary: "$2500/month",
+      location: "Южный регион",
+      salary: "2500$/месяц",
+      datePosted: "2025-01-02",
+    },
+    {
+      title: "Графический дизайнер",
+      company: "DesignStudio",
+      location: "Южный регион",
+      salary: "2500$/месяц",
       datePosted: "2025-01-02",
     },
   ];

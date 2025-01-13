@@ -9,10 +9,10 @@ const JobCard = ({ title, company, location, salary, datePosted }) => {
         <FaBriefcase className={styles.icon} />
         <h3 className={styles.title}>{title}</h3>
       </div>
-      <p className={styles.text}>Company: {company}</p>
-      <p className={styles.text}>Location: {location}</p>
-      <p className={styles.text}>Salary: {salary}</p>
-      <p className={styles.date}>Posted on: {datePosted}</p>
+      <p className={styles.text}>Компания: {company}</p>
+      <p className={styles.text}>Локация: {location}</p>
+      <p className={styles.text}>Зарплата: {salary}</p>
+      <p className={styles.date}>Дата публикации: {datePosted}</p>
     </div>
   );
 };
