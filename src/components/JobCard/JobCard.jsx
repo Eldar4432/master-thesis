@@ -1,18 +1,22 @@
 import React from "react";
-import { FaBriefcase } from "react-icons/fa";
-import styles from "./JobCard.module.css";
+import { FaArrowRight, FaBriefcase } from "react-icons/fa";
+import style from "./JobCard.module.css";
 
 const JobCard = ({ title, company, location, salary, datePosted }) => {
   return (
-    <div className={styles.jobCard}>
-      <div className={styles.titleContainer}>
-        <FaBriefcase className={styles.icon} />
-        <h3 className={styles.title}>{title}</h3>
+    <div className={style.jobCard}>
+      <div className={style.titleContainer}>
+        <FaBriefcase className={style.icon} />
+        <h3 className={style.title}>{title}</h3>
       </div>
-      <p className={styles.text}>Компания: {company}</p>
-      <p className={styles.text}>Локация: {location}</p>
-      <p className={styles.text}>Зарплата: {salary}</p>
-      <p className={styles.date}>Дата публикации: {datePosted}</p>
+      <p className={style.text}>Компания: {company}</p>
+      <p className={style.text}>Локация: {location}</p>
+      <p className={style.text}>Зарплата: {salary}</p>
+      <p className={style.date}>Дата публикации: {datePosted}</p>
+
+      <button className={style.button}>
+        Подробнее <FaArrowRight className="arrowIcon" />
+      </button>
     </div>
   );
 };

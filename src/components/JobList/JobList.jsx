@@ -7,35 +7,35 @@ const JobList = () => {
     {
       title: "Разработчик программного обеспечения",
       company: "TechCorp",
-      location: "Северный регион",
+      location: "Бишкек сити",
       salary: "3000$/месяц",
       datePosted: "2025-01-02",
     },
     {
-      title: "Разработчик программного обеспечения",
-      company: "TechCorp",
-      location: "Северный регион",
-      salary: "3000$/месяц",
+      title: "Программист Front-End (React, Typescript)",
+      company: "Zaalando",
+      location: "Талас-Вегас",
+      salary: "302037300$/месяц",
       datePosted: "2025-01-02",
     },
     {
-      title: "Разработчик программного обеспечения",
-      company: "TechCorp",
-      location: "Северный регион",
+      title: "Водитель с категорией А1",
+      company: "Чынгызов А.",
+      location: "Нарын",
       salary: "3000$/месяц",
       datePosted: "2025-01-02",
     },
     {
       title: "Графический дизайнер",
       company: "DesignStudio",
-      location: "Южный регион",
+      location: "Чуй",
       salary: "2500$/месяц",
       datePosted: "2025-01-02",
     },
     {
       title: "Графический дизайнер",
       company: "DesignStudio",
-      location: "Южный регион",
+      location: "Бишкек",
       salary: "2500$/месяц",
       datePosted: "2025-01-02",
     },
@@ -43,7 +43,7 @@ const JobList = () => {
 
   return (
     <main className={styles.jobs}>
-      <h2>Job Listings</h2>
+      <h2>Недавние вакансии</h2>
       {jobs.map((job, index) => (
         <JobCard
           key={index}
