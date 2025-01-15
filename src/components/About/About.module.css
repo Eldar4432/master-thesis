@@ -1,0 +1,120 @@
+/* Общий контейнер */
+.container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px;
+ 
+  }
+  
+  /* Header Section */
+  .headerSection {
+    text-align: center;
+    background-color: rgba(22, 22, 23, 0.8);
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* Founder Section */
+  .founderSection {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .founderPhoto {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(22, 22, 23, 0.8);
+    transition: transform 0.2s ease;
+  }
+  
+  .founderText {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+    flex: 1;
+  }
+  
+  /* Mission Section */
+  .missionSection {
+    text-align: center;
+    padding: 30px 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .missionTitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgba(22, 22, 23, 0.8);
+    margin-bottom: 15px;
+  }
+  
+  .missionText {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Technologies Section */
+  .techSection {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .techGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+  
+  .techItem {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .techItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .techItem h3 {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  
