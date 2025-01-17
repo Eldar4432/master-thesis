@@ -15,7 +15,7 @@ const JobCard = ({ title, company, location, salary, datePosted }) => {
       <p className={style.date}>Дата публикации: {datePosted}</p>
 
       <button className={style.button}>
-        Подробнее <FaArrowRight className="arrowIcon" />
+        Узнать подробнее <FaArrowRight className="arrowIcon" />
       </button>
     </div>
   );
