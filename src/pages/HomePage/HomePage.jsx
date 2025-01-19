@@ -11,7 +11,10 @@ const HomePage = () => {
     <div>
       <Header />
       <div className={styles.container}>
-        <Filters />
+        <div className={styles.filter}>
+          <Filters />
+        </div>
+
         <div className={styles.content}>
           <JobHeader />
           <JobList />
