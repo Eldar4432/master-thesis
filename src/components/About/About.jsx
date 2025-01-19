@@ -42,6 +42,11 @@ const About = () => {
         <h2 className={styles.subtitle}>Используемые технологии</h2>
         <div className={styles.techGrid}>
           <div className={styles.techItem}>
+            <img
+              src="https://cdn.worldvectorlogo.com/logos/react-1.svg"
+              alt="React Logo"
+              className={styles.techLogo}
+            />
             <h3>React</h3>
             <p>Frontend-библиотека для создания современных приложений.</p>
           </div>
