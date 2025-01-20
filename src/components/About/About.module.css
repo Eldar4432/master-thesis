@@ -97,13 +97,15 @@
   }
   
   .techItem {
-    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
     padding: 15px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    text-align: center;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
   }
   
   .techItem:hover {
@@ -124,4 +126,11 @@
     height: 40px;
     margin-right: 15px;
     object-fit: contain;
+  }
+
+  .logoAndTitle {
+    display: flex;
+    align-items: center; /* Центрирование логотипа и заголовка по вертикали */
+    gap: 10px; /* Расстояние между логотипом и заголовком */
+    margin-bottom: 10px; /* Расстояние между заголовком и описанием */
   }

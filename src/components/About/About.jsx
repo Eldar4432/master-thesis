@@ -42,20 +42,40 @@ const About = () => {
         <h2 className={styles.subtitle}>Используемые технологии</h2>
         <div className={styles.techGrid}>
           <div className={styles.techItem}>
-            <img
-              src="https://cdn.worldvectorlogo.com/logos/react-1.svg"
-              alt="React Logo"
-              className={styles.techLogo}
-            />
-            <h3>React</h3>
+            <div className={styles.logoAndTitle}>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlGmKtrnxElpqw3AExKXPWWBulcwjlvDJa1Q&s"
+                alt="React Logo"
+                className={styles.techLogo}
+              />
+              <h3>React</h3>
+            </div>
             <p>Frontend-библиотека для создания современных приложений.</p>
           </div>
+
           <div className={styles.techItem}>
-            <h3>Node.js</h3>
+            <div className={styles.logoAndTitle}>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png"
+                alt="React Logo"
+                className={styles.techLogo}
+              />
+              <h3>Node.js</h3>
+            </div>
+
             <p>Серверная платформа для обработки данных и API.</p>
           </div>
           <div className={styles.techItem}>
-            <h3>PostgreSQL</h3>
+            <div className={styles.logoAndTitle}>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png"
+                alt="React Logo"
+                className={styles.techLogo}
+              />
+
+              <h3>PostgreSQL</h3>
+            </div>
+
             <p>Надежная база данных для хранения вакансий и пользователей.</p>
           </div>
         </div>
