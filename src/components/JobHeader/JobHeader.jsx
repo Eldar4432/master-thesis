@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useTransition } from "react";
 import { Input } from "antd";
 import styles from "./JobHeader.module.css";
 import person from "../../assets/person.svg";
+import { useTranslation } from "react-i18next";
 
 const { Search } = Input;
 
 const JobHeader = () => {
+  const { t } = useTranslation();
   const handleSearch = (value) => {
     console.log("Search query:", value);
   };
@@ -13,7 +15,7 @@ const JobHeader = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1 className={styles.title}>Открытые вакансии и сотрудники</h1>
+        <h1 className={styles.title}>{t("jobOpenings")}</h1>
         <Search
           placeholder="Введите ключевые слова для поиска"
           allowClear

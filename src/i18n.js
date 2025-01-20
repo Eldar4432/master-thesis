@@ -1,32 +1,21 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector"; // Для автоматического определения языка
-
-// Местные переводы (можно также загружать из внешних файлов)
-const resources = {
-  en: {
-    translation: {
-      welcome: "Welcome to our website!",
-      language: "Language",
-    },
-  },
-  ru: {
-    translation: {
-      welcome: "Добро пожаловать на наш сайт!",
-      language: "Язык",
-    },
-  },
-};
+import en from "./i18n/en.json"; // Путь к файлу с переводами
+import ru from "./i18n/ru.json";
+import ky from "./i18n/ky.json";
 
 i18n
-  .use(LanguageDetector) // Автоматическое определение языка
-  .use(initReactI18next) // Инициализация с React
+  .use(initReactI18next) // подключаем React
   .init({
-    resources,
-    lng: "en", // Язык по умолчанию
-    fallbackLng: "en", // Резервный язык
+    resources: {
+      en: { translation: en },
+      ru: { translation: ru },
+      ky: { translation: ky },
+    },
+    lng: "ru", // Стартовый язык
+    fallbackLng: "ru", // Язык по умолчанию
     interpolation: {
-      escapeValue: false, // Отключаем экранирование, так как React сам это делает
+      escapeValue: false, // не нужно экранировать
     },
   });
 
