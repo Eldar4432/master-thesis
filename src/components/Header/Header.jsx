@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../shared/Logo/Logo";
@@ -8,10 +8,12 @@ import { useTranslation } from "react-i18next";
 const Header = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [isLanguageMenuOpen, setLanguageMenuOpen] = useState(false);
   const isAuthenticated = false; // Здесь будет логика для проверки, авторизован ли пользователь
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang); // Меняем язык
+    setLanguageMenuOpen(false); // Закрываем меню после выбора
   };
 
   return (
@@ -24,7 +26,6 @@ const Header = () => {
         <a className={style.nav_links} href="#" onClick={() => navigate("/")}>
           {t("main")}
         </a>
-
         <a
           className={style.nav_links}
           href="#"
@@ -32,7 +33,6 @@ const Header = () => {
         >
           Вакансии
         </a>
-
         <a
           className={style.nav_links}
           href="#"
@@ -43,23 +43,18 @@ const Header = () => {
 
         <div className={style.languageSelector}>
           <button
-            onClick={() => handleLanguageChange("en")}
+            onClick={() => setLanguageMenuOpen(!isLanguageMenuOpen)}
             className={style.languageBtn}
           >
-            EN
+            {t("language")} ▼
           </button>
-          <button
-            onClick={() => handleLanguageChange("ru")}
-            className={style.languageBtn}
-          >
-            RU
-          </button>
-          <button
-            onClick={() => handleLanguageChange("ky")}
-            className={style.languageBtn}
-          >
-            KY
-          </button>
+          {isLanguageMenuOpen && (
+            <ul className={style.languageMenu}>
+              <li onClick={() => handleLanguageChange("en")}>English</li>
+              <li onClick={() => handleLanguageChange("ru")}>Русский</li>
+              <li onClick={() => handleLanguageChange("ky")}>Кыргызча</li>
+            </ul>
+          )}
         </div>
 
         {isAuthenticated ? (
