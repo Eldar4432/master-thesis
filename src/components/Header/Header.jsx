@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../shared/Logo/Logo";
-import i18n from "../../locales/i18n";
+import i18n from "../../locales/index";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
