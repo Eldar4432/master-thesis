@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../../shared/Logo/Logo";
 import i18n from "../../locales/index";
 import { useTranslation } from "react-i18next";
+import english from "../../assets/english.png";
+import russia from "../../assets/russia.png";
+import kyrgyzstan from "../../assets/kyrgyzstan.png";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -50,9 +53,16 @@ const Header = () => {
           </button>
           {isLanguageMenuOpen && (
             <ul className={style.languageMenu}>
-              <li onClick={() => handleLanguageChange("en")}>English</li>
-              <li onClick={() => handleLanguageChange("ru")}>Русский</li>
-              <li onClick={() => handleLanguageChange("ky")}>Кыргызча</li>
+              <li onClick={() => handleLanguageChange("en")}>
+                <img src={english} alt="English" className={style.flag} /> EN
+              </li>
+              <li onClick={() => handleLanguageChange("ru")}>
+                <img src={russia} alt="Русский" className={style.flag} /> RU
+              </li>
+              <li onClick={() => handleLanguageChange("ky")}>
+                <img src={kyrgyzstan} alt="Кыргызча" className={style.flag} />{" "}
+                KY
+              </li>
             </ul>
           )}
         </div>

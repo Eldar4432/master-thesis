@@ -109,35 +109,47 @@
 
 
 
+  .flag {
+    width: 30px;
+    height: 30px;
+    /* margin-right: 5px; */
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .languageMenu li {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  
+
   .languageSelector {
     position: relative;
   }
   
   .languageBtn {
-    background: #fff;
+    background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s;
-  }
-  
-  .languageBtn:hover {
-    background: #f5f5f5;
   }
   
   .languageMenu {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 5px;
-    padding: 0;
     list-style: none;
+    padding: 0;
     min-width: 100px;
-    z-index: 1000;
+    z-index: 1000; /* Меню будет сверху */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень для улучшения внешнего вида */
   }
   
   .languageMenu li {
@@ -146,7 +158,6 @@
   }
   
   .languageMenu li:hover {
-    background: #f0f0f0;
+    background-color: #f0f0f0;
   }
-  
   
