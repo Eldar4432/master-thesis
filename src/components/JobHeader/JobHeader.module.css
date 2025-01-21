@@ -4,6 +4,7 @@
     align-items: center;
     padding: 20px 20px 20px 0;
     margin-bottom: 20px;
+  
   }
   
   .title {
@@ -13,7 +14,7 @@
   }
   
   .searchInput {
-    width: 100%;
+    width: 90vh;
   }
   
   .image {

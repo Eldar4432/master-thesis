@@ -2,9 +2,11 @@ import React from "react";
 import style from "./Header.module.css";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../shared/Logo/Logo";
-import i18n from "../../i18n";
+import i18n from "../../locales/i18n";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const isAuthenticated = false; // Здесь будет логика для проверки, авторизован ли пользователь
 
@@ -19,15 +21,23 @@ const Header = () => {
         <p className={style.slogan}>Найди свою работу с нами!</p>
       </div>
       <nav className={style.nav}>
-        <a className={style.nav_links} onClick={() => navigate("/")}>
-          Главная
+        <a className={style.nav_links} href="#" onClick={() => navigate("/")}>
+          {t("main")}
         </a>
 
-        <a className={style.nav_links} onClick={() => navigate("/jobs")}>
+        <a
+          className={style.nav_links}
+          href="#"
+          onClick={() => navigate("/jobs")}
+        >
           Вакансии
         </a>
 
-        <a className={style.nav_links} onClick={() => navigate("/about")}>
+        <a
+          className={style.nav_links}
+          href="#"
+          onClick={() => navigate("/about")}
+        >
           О нас
         </a>
 
