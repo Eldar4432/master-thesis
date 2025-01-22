@@ -1,8 +1,10 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
 import styles from "./Login.module.css";
+import { useTranslation } from "react-i18next";
 
 const Login = () => {
+  const { t } = useTranslation();
   const handleLogin = (values) => {
     console.log("Login Successful:", values);
     // Здесь будет логика для входа в систему
@@ -10,7 +12,7 @@ const Login = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1 className={styles.title}>Войти</h1>
+      <h1 className={styles.title}>{t("login")}</h1>
       <Form
         name="login"
         onFinish={handleLogin}

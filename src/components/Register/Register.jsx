@@ -1,8 +1,10 @@
 import React from "react";
 import { Form, Input, Button } from "antd";
 import styles from "./Register.module.css";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
+  const { t } = useTranslation();
   const handleRegister = (values) => {
     console.log("Registration Successful:", values);
     // Логика для регистрации пользователя
@@ -10,7 +12,7 @@ const Register = () => {
 
   return (
     <div className={styles.registerContainer}>
-      <h1 className={styles.title}>Регистрация</h1>
+      <h1 className={styles.title}>{t("registration")}</h1>
       <Form
         name="register"
         onFinish={handleRegister}
