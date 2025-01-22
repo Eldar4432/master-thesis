@@ -113,7 +113,7 @@ const Header = () => {
     <header className={style.header}>
       <div className={style.logo}>
         <Logo />
-        <p className={style.slogan}>Найди свою работу с нами!</p>
+        <p className={style.slogan}>{t("findJob")}</p>
       </div>
       <nav className={style.nav}>
         <a className={style.nav_links} href="#" onClick={() => navigate("/")}>
@@ -124,25 +124,25 @@ const Header = () => {
           href="#"
           onClick={() => navigate("/jobs")}
         >
-          Вакансии
+          {t("jobs")}
         </a>
         <a
           className={style.nav_links}
           href="#"
           onClick={() => navigate("/about")}
         >
-          О нас
+          {t("aboutus")}
         </a>
       </nav>
 
       <div className={style.navWrapper}>
         {!isAuthenticated ? (
           <button onClick={() => navigate("/login")} className={style.btn}>
-            Войти
+            {t("login")}
           </button>
         ) : (
           <button onClick={() => navigate("/logout")} className={style.btn}>
-            Выйти
+            {t("logout")}
           </button>
         )}
 
