@@ -5,22 +5,22 @@ const jobList = [
   {
     id: 1,
     title: "Frontend Developer",
-    company: "ABC Corp",
+    company: "ABC Bishkek",
     location: "Camerino, Italy",
     category: "Frontend",
   },
   {
     id: 2,
     title: "Backend Developer",
-    company: "XYZ Ltd",
-    location: "Rome, Italy",
+    company: "XYsdsf",
+    location: "Talas, Kyrgyzstan",
     category: "Backend",
   },
   {
     id: 3,
     title: "Fullstack Developer",
     company: "Tech Innovations",
-    location: "Milan, Italy",
+    location: "Talas, Kyrgyzstan",
     category: "Fullstack",
   },
   {
