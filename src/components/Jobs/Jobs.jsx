@@ -45,12 +45,12 @@ const Jobs = () => {
 
   return (
     <div className={styles.jobsContainer}>
-      <h2>All Job Listings</h2>
+      <h2>Все работы</h2>
 
       {/* Поиск */}
       <input
         type="text"
-        placeholder="Search jobs..."
+        placeholder="Поиск работы"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         className={styles.searchInput}
