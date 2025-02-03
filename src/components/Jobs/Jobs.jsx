@@ -47,7 +47,6 @@ const Jobs = () => {
     <div className={styles.jobsContainer}>
       <h2>Все работы</h2>
 
-      {/* Поиск */}
       <input
         type="text"
         placeholder="Поиск работы"
@@ -56,7 +55,6 @@ const Jobs = () => {
         className={styles.searchInput}
       />
 
-      {/* Фильтр по категориям */}
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
@@ -80,11 +78,11 @@ const Jobs = () => {
               <h3>{job.title}</h3>
               <p>{job.company}</p>
               <p>{job.location}</p>
-              <button className={styles.detailsButton}>View Details</button>
+              <button className={styles.detailsButton}>Смотреть детали</button>
             </div>
           ))
         ) : (
-          <p>No jobs found.</p>
+          <p>Не найдено.</p>
         )}
       </div>
     </div>
