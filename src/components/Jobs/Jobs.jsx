@@ -62,14 +62,17 @@ const Jobs = () => {
         onChange={(e) => setCategory(e.target.value)}
         className={styles.filterSelect}
       >
-        <option value="All">All Categories</option>
+        <option value="All">Все вакансии</option>
         <option value="Frontend">Frontend</option>
         <option value="Backend">Backend</option>
         <option value="Fullstack">Fullstack</option>
+        <option value="Design">Слесарь</option>
+        <option value="Design">Охранник</option>
+        <option value="Design">Официант</option>
+        <option value="Design">Помощник</option>
         <option value="Design">Design</option>
       </select>
 
-      {/* Список вакансий */}
       <div className={styles.jobsList}>
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job) => (
