@@ -1,8 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { FaArrowRight, FaBriefcase } from "react-icons/fa";
 import style from "./JobCard.module.css";
 
 const JobCard = ({ title, company, location, salary, datePosted }) => {
+  const navigate = useNavigate();
+
+  const handleDetailsClick = (jobId) => {
+    navigate(`/jobs/${jobId}`);
+  };
+
   return (
     <div className={style.jobCard}>
       <div className={style.titleContainer}>
@@ -14,7 +22,7 @@ const JobCard = ({ title, company, location, salary, datePosted }) => {
       <p className={style.text}>Зарплата: {salary}</p>
       <p className={style.date}>Дата публикации: {datePosted}</p>
 
-      <button className={style.button}>
+      <button className={style.button} onClick={handleDetailsClick}>
         Узнать подробнее о работе <FaArrowRight className="arrowIcon" />
       </button>
     </div>
