@@ -17,7 +17,10 @@
     "auth": {
       "login": "Log in",
       "logout": "Log out",
-      "registration": "Registration"
+      "registration": "Registration",
+      "password": "Password",
+      "email": "Email",
+      "account": "No account?"
     },
     "footer": {
       "findJob": "Find your job with us!"

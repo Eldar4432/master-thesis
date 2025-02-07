@@ -17,7 +17,10 @@
     "auth": {
       "login": "Войти",
       "logout": "Выйти",
-      "registration": "Регистрация"
+      "registration": "Регистрация",
+      "password": "Пароль",
+      "email": "Почта email",
+      "account": "Нет аккаунта?"
     },
     "footer": {
       "findJob": "Найди свою работу с нами!"

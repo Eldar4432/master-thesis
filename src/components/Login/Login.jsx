@@ -12,7 +12,7 @@ const Login = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1 className={styles.title}>{t("login")}</h1>
+      <h1 className={styles.title}>{t("auth.login")}</h1>
       <Form
         name="login"
         onFinish={handleLogin}
@@ -20,7 +20,7 @@ const Login = () => {
         className={styles.loginForm}
       >
         <Form.Item
-          label="Email"
+          label={t("auth.email")}
           name="email"
           rules={[
             { required: true, message: "Пожалуйста, введите ваш email!" },
@@ -31,24 +31,24 @@ const Login = () => {
         </Form.Item>
 
         <Form.Item
-          label="Пароль"
+          label={t("auth.password")}
           name="password"
           rules={[
             { required: true, message: "Пожалуйста, введите ваш пароль!" },
             { min: 6, message: "Пароль должен содержать минимум 6 символов!" },
           ]}
         >
-          <Input.Password placeholder="Пароль" />
+          <Input.Password placeholder={t("auth.password")} />
         </Form.Item>
 
         <Form.Item>
           <Button type="primary" htmlType="submit" block>
-            Войти
+            {t("auth.login")}
           </Button>
         </Form.Item>
       </Form>
       <p className={styles.registerLink}>
-        Нет аккаунта? <a href="/register">Зарегистрироваться</a>
+        {t("auth.account")} <a href="/register">{t("auth.registration")}</a>
       </p>
     </div>
   );
