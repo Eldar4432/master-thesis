@@ -1,13 +1,13 @@
 // src/pages/JobDetailsPage.js
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import styles from "./JobsDetails.module.css"; // Подключаем стили как CSS Module
 
 const JobDetails = () => {
-  // Получаем id вакансии из URL
   const { jobId } = useParams();
+  const navigate = useNavigate();
 
-  // Здесь будет логика для получения данных вакансии по jobId
-  // Пока что имитируем данные для примера
+  // Пример данных вакансии (можно заменить на API запрос)
   const jobDetails = {
     title: "Software Developer",
     company: "TechCorp",
@@ -27,23 +27,39 @@ const JobDetails = () => {
   };
 
   return (
-    <div>
+    <div className={styles.jobDetailsContainer}>
       <h1>{jobDetails.title}</h1>
       <h3>{jobDetails.company}</h3>
-      <p>{jobDetails.location}</p>
-      <p>{jobDetails.description}</p>
+      <p>
+        <strong>Location:</strong> {jobDetails.location}
+      </p>
+      <p>
+        <strong>Description:</strong> {jobDetails.description}
+      </p>
+
       <h4>Requirements</h4>
       <ul>
         {jobDetails.requirements.map((req, index) => (
           <li key={index}>{req}</li>
         ))}
       </ul>
+
       <h4>Responsibilities</h4>
       <ul>
         {jobDetails.responsibilities.map((resp, index) => (
           <li key={index}>{resp}</li>
         ))}
       </ul>
+
+      {/* Кнопка для подачи заявки */}
+      <a href="/apply" className={styles.applyButton}>
+        Apply Now
+      </a>
+
+      {/* Кнопка назад */}
+      <button className={styles.backButton} onClick={() => navigate("/jobs")}>
+        Back to Jobs
+      </button>
     </div>
   );
 };

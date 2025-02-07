@@ -1,0 +1,109 @@
+/* src/pages/JobDetailsPage.module.css */
+.jobDetailsContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .jobDetailsContainer h1 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  
+  .jobDetailsContainer h3 {
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .jobDetailsContainer p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+  
+  .jobDetailsContainer h4 {
+    font-size: 18px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .jobDetailsContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .jobDetailsContainer li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .applyButton,
+  .backButton {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  
+  .applyButton {
+    background-color: #28a745;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .applyButton:hover {
+    background-color: #218838;
+  }
+  
+  .backButton {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 1px solid #007bff;
+  }
+  
+  .backButton:hover {
+    background-color: #e2e6ea;
+  }
+  
+  /* Мобильные стили */
+  @media (max-width: 768px) {
+    .jobDetailsContainer {
+      padding: 15px;
+    }
+  
+    .jobDetailsContainer h1 {
+      font-size: 24px;
+    }
+  
+    .jobDetailsContainer h3 {
+      font-size: 20px;
+    }
+  
+    .jobDetailsContainer p {
+      font-size: 14px;
+    }
+  
+    .applyButton,
+    .backButton {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  
