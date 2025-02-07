@@ -1,26 +1,26 @@
 {
-    "jobOpenings": "Job Openings",
-    "employees": "Employees",
-    "noJobsFound": "No jobs found",
-    "jobTitle": "Job Title",
-    "company": "Company",
-    "location": "Location",
-    "salary": "Salary",
-    "posted": "Posted",
-    "main": "Home" ,
-    "jobs": "Jobs",
-    "aboutus": "About Us",
-    "findJob": "Find your job with us!",
-    "login": "Log in",
-    "logout": "Log out",
-    "registration": "Registration",
-
-    "language": "EN",
-
-
-
     "header": {
-        "main": "Home" 
+      "main": "Home",
+      "jobs": "Jobs",
+      "aboutus": "About Us",
+      "language": "EN"
+    },
+    "jobs": {
+      "jobOpenings": "Job Openings",
+      "noJobsFound": "No jobs found",
+      "jobTitle": "Job Title",
+      "company": "Company",
+      "location": "Location",
+      "salary": "Salary",
+      "posted": "Posted"
+    },
+    "auth": {
+      "login": "Log in",
+      "logout": "Log out",
+      "registration": "Registration"
+    },
+    "footer": {
+      "findJob": "Find your job with us!"
     }
   }
   

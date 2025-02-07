@@ -1,28 +1,26 @@
 {
-    "jobOpenings": "Открытые вакансии",
-    "employees": "Сотрудники",
-    "noJobsFound": "Вакансии не найдены",
-    "jobTitle": "Должность",
-    "company": "Компания",
-    "location": "Локация",
-    "salary": "Зарплата",
-    "posted": "Дата публикации",
-    "main": "Главная",
-    "jobs": "Вакансии",
-    "aboutus": "О нас", 
-    "findJob": "Найди свою работу с нами!",
-    "login": "Войти",
-    "logout": "Выйти",
-    "registration": "Регистрация",
-
-
-
-    "language": "RU",
-
-
     "header": {
-        "main": "Главная" 
+      "main": "Главная",
+      "jobs": "Вакансии",
+      "aboutus": "О нас",
+      "language": "RU"
+    },
+    "jobs": {
+      "jobOpenings": "Открытые вакансии",
+      "noJobsFound": "Вакансии не найдены",
+      "jobTitle": "Должность",
+      "company": "Компания",
+      "location": "Локация",
+      "salary": "Зарплата",
+      "posted": "Дата публикации"
+    },
+    "auth": {
+      "login": "Войти",
+      "logout": "Выйти",
+      "registration": "Регистрация"
+    },
+    "footer": {
+      "findJob": "Найди свою работу с нами!"
     }
-}
-
+  }
   

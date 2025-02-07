@@ -23,36 +23,36 @@ const Header = () => {
     <header className={style.header}>
       <div className={style.logo}>
         <Logo />
-        <p className={style.slogan}>{t("findJob")}</p>
+        <p className={style.slogan}>{t("footer.findJob")}</p>
       </div>
       <nav className={style.nav}>
         <a className={style.nav_links} href="#" onClick={() => navigate("/")}>
-          {t("main")}
+          {t("header.main")}
         </a>
         <a
           className={style.nav_links}
           href="#"
           onClick={() => navigate("/jobs")}
         >
-          {t("jobs")}
+          {t("header.jobs")}
         </a>
         <a
           className={style.nav_links}
           href="#"
           onClick={() => navigate("/about")}
         >
-          {t("aboutus")}
+          {t("header.aboutus")}
         </a>
       </nav>
 
       <div className={style.navWrapper}>
         {!isAuthenticated ? (
           <button onClick={() => navigate("/login")} className={style.btn}>
-            {t("login")}
+            {t("auth.login")}
           </button>
         ) : (
           <button onClick={() => navigate("/logout")} className={style.btn}>
-            {t("logout")}
+            {t("auth.logout")}
           </button>
         )}
 
@@ -61,7 +61,7 @@ const Header = () => {
             onClick={() => setLanguageMenuOpen(!isLanguageMenuOpen)}
             className={style.languageBtn}
           >
-            {t("language")} ▼
+            {t("header.language")} ▼
           </button>
           {isLanguageMenuOpen && (
             <ul className={style.languageMenu}>
