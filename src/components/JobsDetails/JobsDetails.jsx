@@ -56,7 +56,6 @@ const JobDetails = () => {
         Apply Now
       </a>
 
-      {/* Кнопка назад */}
       <button className={styles.backButton} onClick={() => navigate("/jobs")}>
         Back to Jobs
       </button>
