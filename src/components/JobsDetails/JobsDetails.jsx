@@ -57,7 +57,7 @@ const JobDetails = () => {
       </a>
 
       <button className={styles.backButton} onClick={() => navigate("/jobs")}>
-        Back to Jobs
+        Back
       </button>
     </div>
   );
