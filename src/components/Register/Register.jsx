@@ -1,13 +1,38 @@
-import React from "react";
-import { Form, Input, Button } from "antd";
+import React, { useState } from "react";
+import { Form, Input, Button, message, Select } from "antd";
 import styles from "./Register.module.css";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const { t } = useTranslation();
-  const handleRegister = (values) => {
-    console.log("Registration Successful:", values);
-    // Логика для регистрации пользователя
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  const handleRegister = async (values) => {
+    setLoading(true);
+    try {
+      const response = await fetch("http://localhost:5001/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        message.success(t("registrationSuccess"));
+        navigate("/login"); // Перенаправление на страницу входа
+      } else {
+        message.error(data.message || t("registrationFailed"));
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      message.error(t("registrationError"));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -20,65 +45,77 @@ const Register = () => {
         className={styles.registerForm}
       >
         <Form.Item
-          label="Имя"
+          label={t("name")}
           name="name"
           rules={[
-            { required: true, message: "Введите ваше имя!" },
-            { min: 2, message: "Имя должно содержать минимум 2 символа!" },
+            { required: true, message: t("enterName") },
+            { min: 2, message: t("nameMinLength") },
           ]}
         >
-          <Input placeholder="Ваше имя" />
+          <Input placeholder={t("yourName")} />
         </Form.Item>
 
         <Form.Item
-          label="Email"
+          label={t("email")}
           name="email"
           rules={[
-            { required: true, message: "Введите ваш email!" },
-            { type: "email", message: "Введите корректный email!" },
+            { required: true, message: t("enterEmail") },
+            { type: "email", message: t("validEmail") },
           ]}
         >
-          <Input placeholder="Email" />
+          <Input placeholder={t("email")} />
         </Form.Item>
 
         <Form.Item
-          label="Пароль"
+          label={t("password")}
           name="password"
           rules={[
-            { required: true, message: "Введите пароль!" },
-            { min: 6, message: "Пароль должен содержать минимум 6 символов!" },
+            { required: true, message: t("enterPassword") },
+            { min: 6, message: t("passwordMinLength") },
           ]}
         >
-          <Input.Password placeholder="Пароль" />
+          <Input.Password placeholder={t("password")} />
         </Form.Item>
 
         <Form.Item
-          label="Повторите пароль"
+          label={t("confirmPassword")}
           name="confirmPassword"
           dependencies={["password"]}
           rules={[
-            { required: true, message: "Подтвердите ваш пароль!" },
+            { required: true, message: t("confirmPassword") },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue("password") === value) {
                   return Promise.resolve();
                 }
-                return Promise.reject(new Error("Пароли не совпадают!"));
+                return Promise.reject(new Error(t("passwordsDontMatch")));
               },
             }),
           ]}
         >
-          <Input.Password placeholder="Повторите пароль" />
+          <Input.Password placeholder={t("confirmPassword")} />
+        </Form.Item>
+
+        <Form.Item
+          label={t("role")}
+          name="role"
+          rules={[{ required: true, message: t("selectRole") }]}
+        >
+          <Select placeholder={t("selectRole")}>
+            <Select.Option value="jobseeker">{t("jobseeker")}</Select.Option>
+            <Select.Option value="employer">{t("employer")}</Select.Option>
+            <Select.Option value="admin">{t("admin")}</Select.Option>
+          </Select>
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit" block>
-            Зарегистрироваться
+          <Button type="primary" htmlType="submit" block loading={loading}>
+            {t("register")}
           </Button>
         </Form.Item>
       </Form>
       <p className={styles.loginLink}>
-        Уже есть аккаунт? <a href="/login">Войти</a>
+        {t("alreadyHaveAccount")} <a href="/login">{t("login")}</a>
       </p>
     </div>
   );
