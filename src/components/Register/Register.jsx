@@ -23,9 +23,9 @@ const Register = () => {
       const data = await response.json();
       if (response.ok) {
         message.success(t("registrationSuccess"));
-        navigate("/login"); // Перенаправление на страницу входа
+        setTimeout(() => navigate("/login"), 1500); // Перенаправление после небольшой задержки
       } else {
-        message.error(data.message || t("registrationFailed"));
+        message.error(data?.message || t("registrationFailed"));
       }
     } catch (err) {
       console.error("Error:", err);
@@ -52,7 +52,7 @@ const Register = () => {
             { min: 2, message: t("nameMinLength") },
           ]}
         >
-          <Input placeholder={t("yourName")} />
+          <Input placeholder={t("yourName")} autoComplete="name" />
         </Form.Item>
 
         <Form.Item
@@ -63,7 +63,7 @@ const Register = () => {
             { type: "email", message: t("validEmail") },
           ]}
         >
-          <Input placeholder={t("email")} />
+          <Input placeholder={t("email")} autoComplete="email" />
         </Form.Item>
 
         <Form.Item
@@ -74,7 +74,10 @@ const Register = () => {
             { min: 6, message: t("passwordMinLength") },
           ]}
         >
-          <Input.Password placeholder={t("password")} />
+          <Input.Password
+            placeholder={t("password")}
+            autoComplete="new-password"
+          />
         </Form.Item>
 
         <Form.Item
@@ -93,7 +96,10 @@ const Register = () => {
             }),
           ]}
         >
-          <Input.Password placeholder={t("confirmPassword")} />
+          <Input.Password
+            placeholder={t("confirmPassword")}
+            autoComplete="new-password"
+          />
         </Form.Item>
 
         <Form.Item
