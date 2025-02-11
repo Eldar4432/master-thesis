@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
 import { FaArrowRight, FaBriefcase } from "react-icons/fa";
 import style from "./JobCard.module.css";
 
