@@ -13,7 +13,7 @@ const JobCard = ({ title, company, location, salary, datePosted }) => {
   return (
     <div className={style.jobCard}>
       <div className={style.titleContainer}>
-        <FaBriefcase className={style.icon} />
+        <FaBriefcasывe className={style.icon} />
         <h3 className={style.title}>{title}</h3>
       </div>
       <p className={style.text}>Компания: {company}</p>
