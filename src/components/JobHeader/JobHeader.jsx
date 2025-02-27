@@ -15,7 +15,7 @@ const JobHeader = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h1 className={styles.title}>{t("jobOpenings")}</h1>
+        <h1 className={styles.title}>{t("jobs.jobOpenings")}</h1>
         <Search
           placeholder="Введите ключевые слова для поиска"
           allowClear
