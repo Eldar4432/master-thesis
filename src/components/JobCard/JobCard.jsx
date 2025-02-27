@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowRight, FaBriefcase } from "react-icons/fa";
 import style from "./JobCard.module.css";
 
-const JobCard = ({ title, company, location, salary, datePosted }) => {
+const JobCard = ({ id, title, company, location, salary, datePosted }) => {
   const navigate = useNavigate();
 
-  const handleDetailsClick = (jobId) => {
-    navigate(`/jobs/${jobId}`);
+  const handleDetailsClick = () => {
+    navigate(`/jobs/${id}`); // Используем переданный id
   };
 
   return (

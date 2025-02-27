@@ -1,63 +1,78 @@
-// src/pages/JobDetailsPage.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import styles from "./JobsDetails.module.css"; // Подключаем стили как CSS Module
+import styles from "./JobsDetails.module.css";
+
+// Функция-эмуляция загрузки данных (замени на API-запрос)
+const fetchJobById = (jobId) => {
+  const jobs = [
+    {
+      id: "1",
+      title: "Разработчик ПО",
+      company: "TechCorp",
+      location: "Бишкек",
+      description: "Мы ищем опытного разработчика для работы в команде.",
+      requirements: ["Опыт с React", "Знание Node.js", "Работа с API"],
+      responsibilities: ["Разработка веб-приложений", "Работа в команде"],
+    },
+    {
+      id: "2",
+      title: "Front-End Разработчик",
+      company: "Zaalando",
+      location: "Талас",
+      description: "Разработка UI/UX решений для веб-приложений.",
+      requirements: ["Опыт с TypeScript", "Знание TailwindCSS"],
+      responsibilities: ["Верстка по макетам", "Оптимизация кода"],
+    },
+  ];
+
+  return jobs.find((job) => job.id === jobId);
+};
 
 const JobDetails = () => {
   const { jobId } = useParams();
   const navigate = useNavigate();
+  const [jobDetails, setJobDetails] = useState(null);
 
-  // Пример данных вакансии (можно заменить на API запрос)
-  const jobDetails = {
-    title: "Software Developer",
-    company: "TechCorp",
-    location: "New York, USA",
-    description:
-      "We are looking for a passionate software developer to join our team.",
-    requirements: [
-      "Experience in JavaScript",
-      "Knowledge of React and Node.js",
-      "Strong problem-solving skills",
-    ],
-    responsibilities: [
-      "Develop and maintain web applications",
-      "Collaborate with cross-functional teams",
-      "Write clean and scalable code",
-    ],
-  };
+  useEffect(() => {
+    const job = fetchJobById(jobId);
+    if (job) {
+      setJobDetails(job);
+    } else {
+      setJobDetails(null);
+    }
+  }, [jobId]);
+
+  if (!jobDetails) {
+    return <h2>Вакансия не найдена</h2>;
+  }
 
   return (
     <div className={styles.jobDetailsContainer}>
       <h1>{jobDetails.title}</h1>
       <h3>{jobDetails.company}</h3>
       <p>
-        <strong>Location:</strong> {jobDetails.location}
+        <strong>Локация:</strong> {jobDetails.location}
       </p>
       <p>
-        <strong>Description:</strong> {jobDetails.description}
+        <strong>Описание:</strong> {jobDetails.description}
       </p>
 
-      <h4>Requirements</h4>
+      <h4>Требования</h4>
       <ul>
         {jobDetails.requirements.map((req, index) => (
           <li key={index}>{req}</li>
         ))}
       </ul>
 
-      <h4>Responsibilities</h4>
+      <h4>Обязанности</h4>
       <ul>
         {jobDetails.responsibilities.map((resp, index) => (
           <li key={index}>{resp}</li>
         ))}
       </ul>
 
-      {/* Кнопка для подачи заявки */}
-      <a href="/apply" className={styles.applyButton}>
-        Apply Now
-      </a>
-
       <button className={styles.backButton} onClick={() => navigate("/")}>
-        Back
+        Назад
       </button>
     </div>
   );

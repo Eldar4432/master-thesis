@@ -5,6 +5,7 @@ import JobCard from "../JobCard/JobCard";
 const JobList = () => {
   const jobs = [
     {
+      id: 1,
       title: "Разработчик программного обеспечения",
       company: "TechCorp",
       location: "Бишкек сити",
@@ -12,6 +13,7 @@ const JobList = () => {
       datePosted: "2025-01-02",
     },
     {
+      id: 2,
       title: "Программист Front-End (React, Typescript)",
       company: "Zaalando",
       location: "Талас-Вегас",
@@ -19,6 +21,7 @@ const JobList = () => {
       datePosted: "2025-01-02",
     },
     {
+      id: 3,
       title: "Водитель с категорией А1",
       company: "Чынгызов А.",
       location: "Нарын",
@@ -26,6 +29,7 @@ const JobList = () => {
       datePosted: "2024-01-03",
     },
     {
+      id: 4,
       title: "Графический дизайнер",
       company: "DesignStudio",
       location: "Чуй",
@@ -33,6 +37,7 @@ const JobList = () => {
       datePosted: "2025-01-02",
     },
     {
+      id: 5,
       title: "Графический дизайнер",
       company: "DesignStudio",
       location: "Бишкек",
@@ -40,6 +45,7 @@ const JobList = () => {
       datePosted: "2025-01-02",
     },
     {
+      id: 6,
       title: "Графический дизайнер",
       company: "DesignStudio",
       location: "Бишкек",
@@ -47,6 +53,7 @@ const JobList = () => {
       datePosted: "2025-01-02",
     },
     {
+      id: 7,
       title: "Графический дизайнер",
       company: "DesignStudio",
       location: "Бишкек",
@@ -58,9 +65,10 @@ const JobList = () => {
   return (
     <main className={styles.jobs}>
       <h2>Недавние вакансии</h2>
-      {jobs.map((job, index) => (
+      {jobs.map((job) => (
         <JobCard
-          key={index}
+          key={job.id}
+          id={job.id}
           title={job.title}
           company={job.company}
           location={job.location}
