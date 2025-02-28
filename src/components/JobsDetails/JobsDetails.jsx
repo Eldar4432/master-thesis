@@ -51,7 +51,7 @@ const JobDetails = () => {
       <h1>{jobDetails.title}</h1>
       <h3>{jobDetails.company}</h3>
       <p>
-        <strong>Локация:</strong> {jobDetails.location}
+        <strong>Местоположение:</strong> {jobDetails.location}
       </p>
       <p>
         <strong>Описание:</strong> {jobDetails.description}
