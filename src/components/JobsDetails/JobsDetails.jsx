@@ -64,7 +64,7 @@ const JobDetails = () => {
         ))}
       </ul>
 
-      <h4>Обязанности в работе</h4>
+      <h4>Обязанности</h4>
       <ul>
         {jobDetails.responsibilities.map((resp, index) => (
           <li key={index}>{resp}</li>
