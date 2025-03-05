@@ -37,7 +37,7 @@ const Register = () => {
 
   return (
     <div className={styles.registerContainer}>
-      <h1 className={styles.title}>{t("registration")}</h1>
+      <h1 className={styles.title}>{t("auth:registration")}</h1>
       <Form
         name="register"
         onFinish={handleRegister}
