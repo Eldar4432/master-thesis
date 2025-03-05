@@ -18,9 +18,11 @@
       "login": "Log in",
       "logout": "Log out",
       "registration": "Registration",
-      "password": "Password",
+      "password": "Password",    
+      "passwordAgain": "Confirm password",
       "email": "Email",
-      "account": "No account?"
+      "account": "No account?",
+      "name": "Name"
     },
     "footer": {
       "findJob": "Find your job with us!"

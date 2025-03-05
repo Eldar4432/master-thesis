@@ -19,8 +19,10 @@
       "logout": "Выйти",
       "registration": "Регистрация",
       "password": "Пароль",
+      "passwordAgain": "Повторите пароль",
       "email": "Почта email",
-      "account": "Нет аккаунта?"
+      "account": "Нет аккаунта?",
+      "name": "Имя"
     },
     "footer": {
       "findJob": "Найди свою работу с нами!"

@@ -19,8 +19,10 @@
       "logout": "Чыгуу",
       "registration": "Катталуу",
       "password": "Сыр сөз",
+      "passwordAgain": "Паролду кайталаныз",
       "email": "Почта email",
-      "account": "Баракчаңыз жокпу?"
+      "account": "Баракчаңыз жокпу?",
+      "name": "Аты"
     },
     "footer": {
       "findJob": "Озундун жумушунду биз менен тап!"

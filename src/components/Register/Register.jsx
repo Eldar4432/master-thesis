@@ -37,7 +37,7 @@ const Register = () => {
 
   return (
     <div className={styles.registerContainer}>
-      <h1 className={styles.title}>{t("auth:registration")}</h1>
+      <h1 className={styles.title}>{t("auth.registration")}</h1>
       <Form
         name="register"
         onFinish={handleRegister}
@@ -45,47 +45,47 @@ const Register = () => {
         className={styles.registerForm}
       >
         <Form.Item
-          label={t("name")}
+          label={t("auth.name")}
           name="name"
           rules={[
             { required: true, message: t("enterName") },
             { min: 2, message: t("nameMinLength") },
           ]}
         >
-          <Input placeholder={t("yourName")} autoComplete="name" />
+          <Input placeholder={t("auth.name")} autoComplete="name" />
         </Form.Item>
 
         <Form.Item
-          label={t("email")}
+          label={t("auth.email")}
           name="email"
           rules={[
-            { required: true, message: t("enterEmail") },
+            { required: true, message: t("auth.email") },
             { type: "email", message: t("validEmail") },
           ]}
         >
-          <Input placeholder={t("email")} autoComplete="email" />
+          <Input placeholder={t("auth.email")} autoComplete="email" />
         </Form.Item>
 
         <Form.Item
-          label={t("password")}
+          label={t("auth.password")}
           name="password"
           rules={[
-            { required: true, message: t("enterPassword") },
+            { required: true, message: t("auth.password") },
             { min: 6, message: t("passwordMinLength") },
           ]}
         >
           <Input.Password
-            placeholder={t("password")}
+            placeholder={t("auth.password")}
             autoComplete="new-password"
           />
         </Form.Item>
 
         <Form.Item
-          label={t("confirmPassword")}
+          label={t("auth.passwordAgain")}
           name="confirmPassword"
           dependencies={["password"]}
           rules={[
-            { required: true, message: t("confirmPassword") },
+            { required: true, message: t("auth.passwordAgain") },
             ({ getFieldValue }) => ({
               validator(_, value) {
                 if (!value || getFieldValue("password") === value) {
@@ -97,7 +97,7 @@ const Register = () => {
           ]}
         >
           <Input.Password
-            placeholder={t("confirmPassword")}
+            placeholder={t("auth.passwordAgain")}
             autoComplete="new-password"
           />
         </Form.Item>
