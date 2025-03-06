@@ -22,7 +22,15 @@
       "passwordAgain": "Повторите пароль",
       "email": "Почта email",
       "account": "Нет аккаунта?",
-      "name": "Имя"
+      "name": "Имя",
+      "role": "Выберите роль",
+      "alreadyHaveAccount": "У вас уже есть аккаунт?"
+    },
+    
+    "role": {
+      "jobseeker": "Работодатель",
+      "employer": "Соискатель",
+      "admin": "Админ"
     },
     "footer": {
       "findJob": "Найди свою работу с нами!"

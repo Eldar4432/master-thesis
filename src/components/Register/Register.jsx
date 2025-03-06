@@ -103,25 +103,27 @@ const Register = () => {
         </Form.Item>
 
         <Form.Item
-          label={t("role")}
+          label={t("auth.role")}
           name="role"
           rules={[{ required: true, message: t("selectRole") }]}
         >
-          <Select placeholder={t("selectRole")}>
-            <Select.Option value="jobseeker">{t("jobseeker")}</Select.Option>
-            <Select.Option value="employer">{t("employer")}</Select.Option>
-            <Select.Option value="admin">{t("admin")}</Select.Option>
+          <Select placeholder={t("auth.role")}>
+            <Select.Option value="jobseeker">
+              {t("role.jobseeker")}
+            </Select.Option>
+            <Select.Option value="employer">{t("role.employer")}</Select.Option>
+            <Select.Option value="admin">{t("role.admin")}</Select.Option>
           </Select>
         </Form.Item>
 
         <Form.Item>
           <Button type="primary" htmlType="submit" block loading={loading}>
-            {t("register")}
+            {t("auth.registration")}
           </Button>
         </Form.Item>
       </Form>
       <p className={styles.loginLink}>
-        {t("alreadyHaveAccount")} <a href="/login">{t("login")}</a>
+        {t("auth.alreadyHaveAccount")} <a href="/login">{t("auth.login")}</a>
       </p>
     </div>
   );

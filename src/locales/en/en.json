@@ -22,7 +22,15 @@
       "passwordAgain": "Confirm password",
       "email": "Email",
       "account": "No account?",
-      "name": "Name"
+      "name": "Name",
+      "role": "Select a role",
+      "alreadyHaveAccount": "Already have account?"
+
+    },
+    "role": {
+      "jobseeker": "Jobseeker",
+      "employer": "Employer",
+      "admin": "Admin"
     },
     "footer": {
       "findJob": "Find your job with us!"
