@@ -33,7 +33,14 @@
       "admin": "Admin"
     },
     "footer": {
-      "findJob": "Find your job with us!"
+      "findJob": "Find your job with us!",
+      "usefulLinks": "Useful links",
+      "aboutUs": "About us",
+      "contacts": "Contacts",
+      "terms": "Terms of use",
+      "privacy": "Privacy Policy",
+      "social": "Our social networks",
+      "reserved": "All rights reserved"
     }
   }
   

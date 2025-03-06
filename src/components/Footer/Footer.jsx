@@ -1,8 +1,11 @@
 import React from "react";
 import style from "./Footer.module.css";
+import { useTranslation } from "react-i18next";
+
 import Logo from "../../shared/Logo/Logo";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const socialLinks = [
     {
       name: "Instagram",
@@ -20,27 +23,27 @@ const Footer = () => {
       <div className={style.footerTop}>
         <div className={style.logoSection}>
           <Logo />
-          <p className={style.slogan}>Найди свою работу с нами!</p>
+          <p className={style.slogan}> {t("footer.findJob")}</p>
         </div>
         <div className={style.linksSection}>
-          <h4>Полезные ссылки</h4>
+          <h4> {t("footer.usefulLinks")} </h4>
           <ul className={style.linksList}>
             <li>
-              <a href="/about">О нас</a>
+              <a href="/about">{t("footer.aboutUs")}</a>
             </li>
             <li>
-              <a href="/contact">Контакты</a>
+              <a href="/contact">{t("footer.contacts")}</a>
             </li>
             <li>
-              <a href="/terms">Условия использования</a>
+              <a href="/terms">{t("footer.terms")}</a>
             </li>
             <li>
-              <a href="/privacy">Политика конфиденциальности</a>
+              <a href="/privacy">{t("footer.privacy")}</a>
             </li>
           </ul>
         </div>
         <div className={style.socialLinks}>
-          <h4>Наши соц.сети</h4>
+          <h4>{t("footer.social")}</h4>
           <div>
             {socialLinks.map(({ name, href }) => (
               <a
@@ -58,7 +61,7 @@ const Footer = () => {
       </div>
       <div className={style.footerBottom}>
         <p className={style.copyright}>
-          © 2025 Eldar Aibekov. Все права защищены.
+          © 2025 Eldar Aibekov. {t("footer.reserved")}.
         </p>
         <a
           href="https://github.com/Eldar4432"
