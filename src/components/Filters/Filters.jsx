@@ -30,6 +30,7 @@ const Filters = () => {
           <Select placeholder="Выберите район">
             <Option value="all">Все районы</Option>
             <Option value="center">Бакай-Ата</Option>
+            <Option value="center">Манас</Option>
             <Option value="suburb">Ленинский</Option>
             <Option value="suburb">Тон</Option>
             <Option value="suburb">Озгон</Option>
