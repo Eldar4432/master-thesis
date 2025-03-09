@@ -33,6 +33,7 @@ const Filters = () => {
             <Option value="center">Манас</Option>
             <Option value="suburb">Ленинский</Option>
             <Option value="suburb">Тон</Option>
+            <Option value="suburb">Туп</Option>
             <Option value="suburb">Озгон</Option>
             <Option value="suburb">Алай</Option>
           </Select>
