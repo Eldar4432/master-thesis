@@ -36,6 +36,7 @@ const Filters = () => {
             <Option value="suburb">Туп</Option>
             <Option value="suburb">Озгон</Option>
             <Option value="suburb">Алай</Option>
+            <Option value="suburb">Кара-Буура</Option>
           </Select>
         </Form.Item>
 
