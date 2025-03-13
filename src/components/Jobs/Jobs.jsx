@@ -36,10 +36,6 @@ const Jobs = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
 
-  // const handleDetailsClick = (jobId) => {
-  //   navigate(`/jobs/${jobId}`);
-  // };
-
   const filteredJobs = jobList.filter((job) => {
     return (
       (category === "All" || job.category === category) &&
