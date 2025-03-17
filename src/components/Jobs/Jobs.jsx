@@ -45,7 +45,7 @@ const Jobs = () => {
 
   return (
     <div className={styles.jobsContainer}>
-      <h2>Все открытые работы</h2>
+      <h2>Открытые вакансии</h2>
 
       <input
         type="text"
