@@ -69,6 +69,11 @@ const Jobs = () => {
         <option value="Design">Официант</option>
         <option value="Design">Помощник</option>
         <option value="Design">Design</option>
+        <option value="Design">Сварщик</option>
+        <option value="Design">Парикмахер</option>
+        <option value="Design">Design</option>
+        <option value="Design">Design</option>
+        <option value="Design">Design</option>
       </select>
 
       <div className={styles.jobsList}>

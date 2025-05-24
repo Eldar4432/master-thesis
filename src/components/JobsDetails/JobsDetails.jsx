@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styles from "./JobsDetails.module.css";
 
-// Функция-эмуляция загрузки данных (замени на API-запрос)
 const fetchJobById = (jobId) => {
   const jobs = [
     {
@@ -13,6 +12,7 @@ const fetchJobById = (jobId) => {
       description: "Мы ищем опытного разработчика для работы в команде.",
       requirements: ["Опыт с React", "Знание Node.js", "Работа с API"],
       responsibilities: ["Разработка веб-приложений", "Работа в команде"],
+      contactEmail: "hr@techcorp.com",
     },
     {
       id: "2",
@@ -22,6 +22,7 @@ const fetchJobById = (jobId) => {
       description: "Разработка UI/UX решений для веб-приложений.",
       requirements: ["Опыт с TypeScript", "Знание TailwindCSS"],
       responsibilities: ["Верстка по макетам", "Оптимизация кода"],
+      contactEmail: "jobs@zaalando.com",
     },
   ];
 
@@ -35,11 +36,7 @@ const JobDetails = () => {
 
   useEffect(() => {
     const job = fetchJobById(jobId);
-    if (job) {
-      setJobDetails(job);
-    } else {
-      setJobDetails(null);
-    }
+    setJobDetails(job || null);
   }, [jobId]);
 
   if (!jobDetails) {
@@ -70,6 +67,23 @@ const JobDetails = () => {
           <li key={index}>{resp}</li>
         ))}
       </ul>
+
+      <h4>Контактная информация</h4>
+      <p>
+        Email:{" "}
+        <a href={`mailto:${jobDetails.contactEmail}`}>
+          {jobDetails.contactEmail}
+        </a>
+      </p>
+
+      <button
+        className={styles.applyButton}
+        onClick={() =>
+          (window.location.href = `mailto:${jobDetails.contactEmail}`)
+        }
+      >
+        Откликнуться
+      </button>
 
       <button className={styles.backButton} onClick={() => navigate("/")}>
         Назад
