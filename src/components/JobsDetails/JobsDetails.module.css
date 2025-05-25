@@ -1,106 +1,117 @@
 .jobDetailsContainer {
-  max-width: 800px;
+  max-width: 840px;
   margin: 40px auto;
-  padding: 24px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  font-family: "Segoe UI", sans-serif;
+  transition: box-shadow 0.3s ease;
 }
 
 .jobDetailsContainer h1 {
-  font-size: 28px;
-  color: #222;
-  margin-bottom: 20px;
-  font-weight: 600;
+  font-size: 30px;
+  color: #1f1f1f;
+  margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .jobDetailsContainer h3 {
   font-size: 22px;
-  color: #444;
-  margin-bottom: 10px;
-  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
 .jobDetailsContainer p {
   font-size: 16px;
   color: #555;
-  margin-bottom: 16px;
-  line-height: 1.7;
+  margin-bottom: 18px;
+  line-height: 1.8;
 }
 
 .jobDetailsContainer h4 {
   font-size: 20px;
   color: #222;
-  margin-top: 30px;
-  margin-bottom: 12px;
+  margin-top: 32px;
+  margin-bottom: 14px;
   font-weight: 600;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid #ddd;
   padding-bottom: 6px;
 }
 
 .jobDetailsContainer ul {
-  padding-left: 20px;
-  margin: 0 0 16px 0;
+  padding-left: 22px;
+  margin: 0 0 24px 0;
 }
 
 .jobDetailsContainer li {
   font-size: 16px;
-  color: #555;
+  color: #4a4a4a;
   margin-bottom: 10px;
+  line-height: 1.6;
   position: relative;
 }
 
 .jobDetailsContainer li::before {
   content: "•";
-  color: #28a745;
+  color: #2ecc71;
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .applyButton,
 .backButton {
-  padding: 12px 25px;
+  padding: 12px 28px;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   border: none;
-  transition: all 0.2s ease;
-  display: inline-block;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .applyButton {
-  background-color: #28a745;
+  background-color: #2ecc71;
   color: #fff;
-  margin-right: 10px;
 }
 
 .applyButton:hover {
-  background-color: #218838;
+  background-color: #27ae60;
+  transform: translateY(-1px);
 }
 
 .backButton {
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   color: #007bff;
   border: 1px solid #007bff;
 }
 
 .backButton:hover {
-  background-color: #e2e6ea;
+  background-color: #f1f1f1;
+  transform: translateY(-1px);
 }
 
 /* Мобильные стили */
 @media (max-width: 768px) {
   .jobDetailsContainer {
-    padding: 16px;
+    padding: 20px;
+    margin: 20px;
   }
 
   .jobDetailsContainer h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .jobDetailsContainer h3 {
@@ -112,9 +123,15 @@
     font-size: 15px;
   }
 
+  .buttonGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .applyButton,
   .backButton {
+    width: 100%;
     font-size: 15px;
-    padding: 10px 20px;
+    padding: 12px;
   }
 }
