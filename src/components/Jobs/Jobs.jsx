@@ -6,88 +6,146 @@ const jobList = [
     id: 1,
     title: "Frontend Developer",
     company: "ABC Bishkek",
-    location: "Camerino, Italy",
+    location: "Бишкек",
     category: "Frontend",
   },
   {
     id: 2,
     title: "Backend Developer",
-    company: "XYsdsf",
-    location: "Talas, Kyrgyzstan",
+    company: "XYZ Tech",
+    location: "Талас",
     category: "Backend",
   },
   {
     id: 3,
     title: "Fullstack Developer",
     company: "Tech Innovations",
-    location: "Talas, Kyrgyzstan",
+    location: "Ош",
     category: "Fullstack",
   },
   {
     id: 4,
     title: "UI/UX Designer",
     company: "Creative Studio",
-    location: "Napoli, Italy",
+    location: "Нарын",
     category: "Design",
   },
+  {
+    id: 5,
+    title: "Официант",
+    company: "Cafe Central",
+    location: "Бишкек",
+    category: "Waiter",
+  },
+  {
+    id: 6,
+    title: "Сварщик",
+    company: "StroyKom",
+    location: "Каракол",
+    category: "Welder",
+  },
+  {
+    id: 7,
+    title: "Охранник",
+    company: "Secure Ltd",
+    location: "Ош",
+    category: "Security",
+  },
 ];
+
+const categories = [
+  { value: "All", label: "Все вакансии" },
+  { value: "Frontend", label: "Frontend" },
+  { value: "Backend", label: "Backend" },
+  { value: "Fullstack", label: "Fullstack" },
+  { value: "Design", label: "Дизайн" },
+  { value: "Waiter", label: "Официант" },
+  { value: "Welder", label: "Сварщик" },
+  { value: "Security", label: "Охранник" },
+];
+
+const locations = ["Все города", "Бишкек", "Ош", "Нарын", "Талас", "Каракол"];
 
 const Jobs = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
+  const [location, setLocation] = useState("Все города");
 
   const filteredJobs = jobList.filter((job) => {
-    return (
-      (category === "All" || job.category === category) &&
-      job.title.toLowerCase().includes(search.toLowerCase())
-    );
+    const matchesSearch = job.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const matchesCategory = category === "All" || job.category === category;
+    const matchesLocation =
+      location === "Все города" || job.location === location;
+
+    return matchesSearch && matchesCategory && matchesLocation;
   });
+
+  const resetFilters = () => {
+    setSearch("");
+    setCategory("All");
+    setLocation("Все города");
+  };
 
   return (
     <div className={styles.jobsContainer}>
       <h2>Открытые вакансии</h2>
 
-      <input
-        type="text"
-        placeholder="Поиск работы"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className={styles.searchInput}
-      />
+      <div className={styles.controls}>
+        <input
+          type="text"
+          placeholder="Поиск по названию"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className={styles.searchInput}
+        />
 
-      <select
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-        className={styles.filterSelect}
-      >
-        <option value="All">Все вакансии</option>
-        <option value="Frontend">Frontend</option>
-        <option value="Backend">Backend</option>
-        <option value="Fullstack">Fullstack</option>
-        <option value="Design">Слесарь</option>
-        <option value="Design">Охранник</option>
-        <option value="Design">Официант</option>
-        <option value="Design">Помощник</option>
-        <option value="Design">Design</option>
-        <option value="Design">Сварщик</option>
-        <option value="Design">Парикмахер</option>
-        <option value="Design">Design</option>
-        <option value="Design">Design</option>
-        <option value="Design">Design</option>
-      </select>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className={styles.filterSelect}
+        >
+          {categories.map((cat) => (
+            <option key={cat.value} value={cat.value}>
+              {cat.label}
+            </option>
+          ))}
+        </select>
+
+        <select
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className={styles.filterSelect}
+        >
+          {locations.map((loc) => (
+            <option key={loc} value={loc}>
+              {loc}
+            </option>
+          ))}
+        </select>
+
+        <button onClick={resetFilters} className={styles.resetButton}>
+          Сбросить фильтры
+        </button>
+      </div>
 
       <div className={styles.jobsList}>
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job) => (
             <div key={job.id} className={styles.jobCard}>
               <h3>{job.title}</h3>
-              <p>{job.company}</p>
-              <p>{job.location}</p>
+              <p>
+                <strong>Компания:</strong> {job.company}
+              </p>
+              <p>
+                <strong>Город:</strong> {job.location}
+              </p>
               <button className={styles.detailsButton}>Смотреть детали</button>
             </div>
           ))
         ) : (
-          <p>Не найдено.</p>
+          <p>Вакансий по заданным параметрам не найдено.</p>
         )}
       </div>
     </div>
