@@ -42,7 +42,7 @@ const JobDetails = () => {
   }, [jobId, fetchJobById]);
 
   if (!jobDetails) {
-    return <h2>Вакансия не найдена</h2>;
+    return <h2 className={styles.notFound}>Вакансия не найдена</h2>;
   }
 
   const {
@@ -57,38 +57,45 @@ const JobDetails = () => {
 
   return (
     <div className={styles.jobDetailsContainer} role="main">
-      <h1>{title}</h1>
-      <h3>{company}</h3>
-      <p>
-        <strong>Местоположение:</strong> {location}
-      </p>
-      <p>
-        <strong>Описание:</strong> {description}
-      </p>
+      <header className={styles.headerSection}>
+        <h1>{title}</h1>
+        <h3>{company}</h3>
+        <p>
+          <strong>Город:</strong> {location}
+        </p>
+      </header>
 
-      <h4>Требования</h4>
-      <ul>
-        {requirements.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
+      <section className={styles.section}>
+        <h4>Описание</h4>
+        <p>{description}</p>
+      </section>
 
-      <h4>Обязанности</h4>
-      <ul>
-        {responsibilities.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
+      <section className={styles.section}>
+        <h4>Требования</h4>
+        <ul>
+          {requirements.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      </section>
 
-      <h4>Контактная информация</h4>
-      <p>
-        Email:{" "}
-        <a href={`mailto:${contactEmail}`} aria-label="Отправить email">
-          {contactEmail}
-        </a>
-      </p>
+      <section className={styles.section}>
+        <h4>Обязанности</h4>
+        <ul>
+          {responsibilities.map((item, idx) => (
+            <li key={idx}>{item}</li>
+          ))}
+        </ul>
+      </section>
 
-      <div className={styles.buttonGroup}>
+      <section className={styles.section}>
+        <h4>Контакты</h4>
+        <p>
+          Email: <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        </p>
+      </section>
+
+      <footer className={styles.buttonGroup}>
         <button
           className={styles.applyButton}
           onClick={() => (window.location.href = `mailto:${contactEmail}`)}
@@ -98,7 +105,7 @@ const JobDetails = () => {
         <button className={styles.backButton} onClick={() => navigate("/")}>
           Назад
         </button>
-      </div>
+      </footer>
     </div>
   );
 };
