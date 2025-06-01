@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Jobs.module.css";
 
 const jobList = [
@@ -70,6 +71,7 @@ const Jobs = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [location, setLocation] = useState("Все города");
+  const navigate = useNavigate();
 
   const filteredJobs = jobList.filter((job) => {
     const matchesSearch = job.title
@@ -141,7 +143,12 @@ const Jobs = () => {
               <p>
                 <strong>Город:</strong> {job.location}
               </p>
-              <button className={styles.detailsButton}>Смотреть детали</button>
+              <button
+                className={styles.detailsButton}
+                onClick={() => navigate(`/jobs/${job.id}`)}
+              >
+                Смотреть детали
+              </button>
             </div>
           ))
         ) : (
