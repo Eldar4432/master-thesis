@@ -12,8 +12,8 @@ i18n
       ru: { translation: ru },
       ky: { translation: ky },
     },
-    lng: "ky", // Язык по умолчанию
-    fallbackLng: "ky", // Резервный язык, если перевод не найден
+    lng: "ru", // Язык по умолчанию
+    fallbackLng: "ru", // Резервный язык, если перевод не найден
     interpolation: {
       escapeValue: false, // Не нужно экранировать значения
     },

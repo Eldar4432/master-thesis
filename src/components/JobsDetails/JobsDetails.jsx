@@ -1,29 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import jobsDatabase from "../../data/jobsData";
 import styles from "./JobsDetails.module.css";
-
-const jobsDatabase = [
-  {
-    id: "1",
-    title: "Разработчик ПО",
-    company: "TechCorp",
-    location: "Бишкек",
-    description: "Мы ищем опытного разработчика для работы в команде.",
-    requirements: ["Опыт с React", "Знание Node.js", "Работа с API"],
-    responsibilities: ["Разработка веб-приложений", "Работа в команде"],
-    contactEmail: "hr@techcorp.com",
-  },
-  {
-    id: "2",
-    title: "Front-End Разработчик",
-    company: "Zaalando",
-    location: "Талас",
-    description: "Разработка UI/UX решений для веб-приложений.",
-    requirements: ["Опыт с TypeScript", "Знание TailwindCSS"],
-    responsibilities: ["Верстка по макетам", "Оптимизация кода"],
-    contactEmail: "jobs@zaalando.com",
-  },
-];
 
 const JobDetails = () => {
   const { jobId } = useParams();

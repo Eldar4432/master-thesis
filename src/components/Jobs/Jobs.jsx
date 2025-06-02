@@ -1,58 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import jobsDatabase from "../../data/jobsData";
 import styles from "./Jobs.module.css";
-
-const jobList = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    company: "ABC Bishkek",
-    location: "Бишкек",
-    category: "Frontend",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    company: "XYZ Tech",
-    location: "Талас",
-    category: "Backend",
-  },
-  {
-    id: 3,
-    title: "Fullstack Developer",
-    company: "Tech Innovations",
-    location: "Ош",
-    category: "Fullstack",
-  },
-  {
-    id: 4,
-    title: "UI/UX Designer",
-    company: "Creative Studio",
-    location: "Нарын",
-    category: "Design",
-  },
-  {
-    id: 5,
-    title: "Официант",
-    company: "Cafe Central",
-    location: "Бишкек",
-    category: "Waiter",
-  },
-  {
-    id: 6,
-    title: "Сварщик",
-    company: "StroyKom",
-    location: "Каракол",
-    category: "Welder",
-  },
-  {
-    id: 7,
-    title: "Охранник",
-    company: "Secure Ltd",
-    location: "Ош",
-    category: "Security",
-  },
-];
 
 const categories = [
   { value: "All", label: "Все вакансии" },
@@ -73,7 +22,7 @@ const Jobs = () => {
   const [location, setLocation] = useState("Все города");
   const navigate = useNavigate();
 
-  const filteredJobs = jobList.filter((job) => {
+  const filteredJobs = jobsDatabase.filter((job) => {
     const matchesSearch = job.title
       .toLowerCase()
       .includes(search.toLowerCase());
