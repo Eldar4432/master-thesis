@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Filters from "../../components/Filters/Filters";
@@ -7,6 +7,12 @@ import styles from "./HomePage.module.css";
 import JobHeader from "../../components/JobHeader/JobHeader";
 
 const HomePage = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
+
   return (
     <div>
       <Header />
@@ -16,8 +22,8 @@ const HomePage = () => {
         </div>
 
         <div className={styles.content}>
-          <JobHeader />
-          <JobList />
+          <JobHeader onSearch={(value) => setSearchQuery(value)} />
+          <JobList searchQuery={searchQuery} />
         </div>
       </div>
       <Footer />

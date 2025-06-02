@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./JobList.module.css";
 import JobCard from "../JobCard/JobCard";
 
-const JobList = () => {
+const JobList = ({ searchQuery = "" }) => {
   const jobs = [
     {
       id: 1,
@@ -62,20 +62,33 @@ const JobList = () => {
     },
   ];
 
+  const filteredJobs = jobs.filter((job) => {
+    const lowerCaseQuery = searchQuery.toLowerCase();
+    return (
+      job.title.toLowerCase().includes(lowerCaseQuery) ||
+      job.company.toLowerCase().includes(lowerCaseQuery) ||
+      job.location.toLowerCase().includes(lowerCaseQuery)
+    );
+  });
+
   return (
     <main className={styles.jobs}>
       <h2>Недавние вакансии</h2>
-      {jobs.map((job) => (
-        <JobCard
-          key={job.id}
-          id={job.id}
-          title={job.title}
-          company={job.company}
-          location={job.location}
-          salary={job.salary}
-          datePosted={job.datePosted}
-        />
-      ))}
+      {filteredJobs.length > 0 ? (
+        filteredJobs.map((job) => (
+          <JobCard
+            key={job.id}
+            id={job.id}
+            title={job.title}
+            company={job.company}
+            location={job.location}
+            salary={job.salary}
+            datePosted={job.datePosted}
+          />
+        ))
+      ) : (
+        <p className={styles.notFound}>Вакансии не найдены</p>
+      )}
     </main>
   );
 };
