@@ -11,6 +11,7 @@ const categories = [
   { value: "Design", label: "Дизайн" },
   { value: "Waiter", label: "Официант" },
   { value: "Welder", label: "Сварщик" },
+  { value: "Teacher", label: "Преподователь" },
   { value: "Security", label: "Охранник" },
 ];
 
