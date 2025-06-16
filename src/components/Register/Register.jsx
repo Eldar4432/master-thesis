@@ -12,7 +12,7 @@ const Register = () => {
   const handleRegister = async (values) => {
     setLoading(true);
     try {
-      // Сделать запрос на сервер для регистрации
+      // серверге запрос кылуу фунциясы
       const response = await fetch("http://localhost:5001/register", {
         method: "POST",
         headers: {
@@ -25,9 +25,9 @@ const Register = () => {
 
       if (response.ok) {
         message.success(t("registrationSuccess"));
-        setTimeout(() => navigate("/login"), 1500); // Перенаправление после успешной регистрации
+        setTimeout(() => navigate("/login"), 1500); // ийгиликтуу болсо регистрация жазайт
       } else {
-        // Сообщение об ошибке, если регистрация не прошла
+        // катталууу болбой калса бизге кат келет
         message.error(data?.message || t("registrationFailed"));
       }
     } catch (err) {

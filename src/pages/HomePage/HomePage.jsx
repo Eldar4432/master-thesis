@@ -8,6 +8,7 @@ import JobHeader from "../../components/JobHeader/JobHeader";
 
 const HomePage = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  //  бул юсстейт состояниеси
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -15,10 +16,10 @@ const HomePage = () => {
 
   return (
     <div>
-      <Header />
+      <Header /> // бул жерде биз хедерди чакырып атабыз
       <div className={styles.container}>
         <div className={styles.filter}>
-          <Filters />
+          <Filters /> // фильтр компонентин чакырылып жатат
         </div>
 
         <div className={styles.content}>

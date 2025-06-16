@@ -7,9 +7,9 @@ const Login = () => {
   const { t } = useTranslation();
   const handleLogin = (values) => {
     console.log("Login Successful:", values);
-    // Здесь будет логика для входа в систему
+    // Бул жерге кируу системасына функциясы
   };
-
+  // бул жерде биз html чакырып атабыз
   return (
     <div className={styles.loginContainer}>
       <h1 className={styles.title}>{t("auth.login")}</h1>
